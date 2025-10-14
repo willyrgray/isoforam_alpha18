@@ -18,6 +18,7 @@ isoforam_a18() returns central value only
 
 for 'species' input the number corresponding to the species/genus/group listed below
 i.e. for 'All planktics' input species=33 
+
 [1] "Globigerina bulloides"            
 [2] "Globigerinoides ruber white"      
 [3] "Globorotalia inflata"             
