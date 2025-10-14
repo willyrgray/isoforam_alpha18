@@ -188,16 +188,6 @@ isoforam_alpha18(flag=3, species=32, var1=-2, var2=3.810193)
 # -1.50902e-07 0.01304945 0.1304868
 
 
-######
-#check it works!
-t= seq(0,40)
-length(t)
-plot(t, isoforam_alpha18(flag=1, species=32, var1=t, var2=0)$d18Oc)
-points(isoforam_alpha18(flag=2, species=32, var1=isoforam_alpha18(flag=1, species =32, var1=t, var2=0)$d18Oc, var2=0)$t, isoforam_alpha18(flag=1, species=32, var1=t, var2=0)$d18Oc, col='red', pch=3)
-
-save('isoforam_alpha18',file='/Users/wgray/ownCloud/wgray_shared/R/iso_foram_alpha18/isoforam_alpha18.Rdata')
-load('/Users/wgray/ownCloud/wgray_shared/R/iso_foram_alpha18/isoforam_alpha18.Rdata')
-
 #test function 
 isoforam_alpha18(flag=2, species=32, var1=isoforam_alpha18(flag=1, species=32, var1=1, var2=0)$d18Oc, var2=0)
 #t       t_se      t_sd
@@ -265,9 +255,6 @@ isoforam_a18<- function(flag, species, var1, var2){
 
 ###end function 
 #################################
-
-save('isoforam_a18',file='/Users/wgray/ownCloud/wgray_shared/R/iso_foram_alpha18/isoforam_a18.Rdata')
-load('/Users/wgray/ownCloud/wgray_shared/R/iso_foram_alpha18/isoforam_a18.Rdata')
 
 #test function 
 isoforam_a18(flag=2, species=32, var1=isoforam_a18(flag=1, species=32, var1=1, var2=0), var2=0)
