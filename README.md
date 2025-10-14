@@ -14,7 +14,7 @@ VSMOW VPDB conversion is IUAPC (Brand 2014 / Kim 2015)
 
 isoforam_alpha18() returns central value plus calibration uncertainites (SE and SD)
 
-isoforam_a18() returns central value plus calibration uncertainites (SE and SD)
+isoforam_a18() returns central value only
 
 for 'species' input the number corresponding to the species/genus/group listed below
 i.e. for 'All planktics' input species=33 
