@@ -47,7 +47,7 @@
 ####start function 
 isoforam_alpha18<- function(flag, species, var1, var2){
 	#species=33
-	if(is.null(species)){species == 33} #defaults to 'all planktics' if no species input
+	if(is.null(species)){species <- 33} #defaults to 'all planktics' if no species input
 	
 	#defined constants
 	species_list<- c('Globigerina bulloides', 'Globigerinoides ruber white', 'Globorotalia inflata','Globorotalia truncatulinoides (d)', 'Globorotalia truncatulinoides (s)','Neogloboquadrina pachyderma','Orbulina universa','Trilobatus sacculifer','Bulimina aculeata','Bulimina marginata','Cibicidoides pachyderma','Cibicidoides wullerstorfi','Heoglundina elegans','Planulina ariminensis','Planulina foveolata','Rosalina vilardeboana','Uvigerina curticosta','Uvigerina flintii','Uvigerina peregrina','Bulimina','Cibicidoides','Globigerina','Globigerinoides','Globorotalia','Hoeglundina','Neogloboquadrina','Orbulina','Planulina','Rosalina','Trilobatus','Uvigerina','Cibicidoides + Planulina','All planktics') 
@@ -163,8 +163,9 @@ isoforam_alpha18<- function(flag, species, var1, var2){
 		dw_se<- mean(c(abs(dw-dw_se_lwr), abs(dw_se_lwr-dw)))
 		dw_sd<- mean(c(abs(dw-dw_sd_lwr), abs(dw_sd_lwr-dw)))
 		return(data.frame(d18Ow = dw, d18Ow_se = dw_se, d18Ow_sd = dw_sd))
+	} else {
+  	stop("flag must be 1 (returns calcite), 2 (returns temperature), or 3 (returns water).")
 	}
-	#print(paste(species_list[species],'calibration')) 
 }
 
 ###end function 
@@ -202,7 +203,7 @@ isoforam_alpha18(flag=2, species=32, var1=isoforam_alpha18(flag=1, species=32, v
 ####start function 
 isoforam_a18<- function(flag, species, var1, var2){
 	#species=33
-	if(is.null(species)){species == 33} #defaults to 'all planktics' if no species input
+	if(is.null(species)){species <- 33} #defaults to 'all planktics' if no species input
 	
 	#defined constants
 	species_list<- c('Globigerina bulloides', 'Globigerinoides ruber white', 'Globorotalia inflata','Globorotalia truncatulinoides (d)', 'Globorotalia truncatulinoides (s)','Neogloboquadrina pachyderma','Orbulina universa','Trilobatus sacculifer','Bulimina aculeata','Bulimina marginata','Cibicidoides pachyderma','Cibicidoides wullerstorfi','Heoglundina elegans','Planulina ariminensis','Planulina foveolata','Rosalina vilardeboana','Uvigerina curticosta','Uvigerina flintii','Uvigerina peregrina','Bulimina','Cibicidoides','Globigerina','Globigerinoides','Globorotalia','Hoeglundina','Neogloboquadrina','Orbulina','Planulina','Rosalina','Trilobatus','Uvigerina','Cibicidoides + Planulina','All planktics') 
@@ -249,8 +250,9 @@ isoforam_a18<- function(flag, species, var1, var2){
 		dc_dw<- (alpha-1)*1000
 		dw<- (var2-(dc_dw-30.92)/1.03092)
 		return(dw)
+	}  else {
+  	stop("flag must be 1 (returns calcite), 2 (returns temperature), or 3 (returns water).")
 	}
-	#print(paste(species_list[species],'calibration')) 
 }
 
 ###end function 
